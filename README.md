@@ -291,3 +291,40 @@ const removeButton = () => {
     return createRemoveBtn;
 }
 ```
+---
+Let's break down the code into sections and explain its functionality:
+
+# HTML Section:
+*	The code starts with the HTML document declaration (\<!DOCTYPE html>).
+*	The \<html> tag represents the root of an HTML document.
+*	The \<head> section contains metadata about the document, such as the character encoding, title, and stylesheet  reference.
+*	The \<body> section contains the visible content of the document.
+
+  ## Within the \<body> section:
+*	The content is organized using various \<div> elements with specific class names for styling purposes.
+*	The to-do list items are represented as \<li> (list item) elements within an unordered list (\<ul\>).
+*	Each to-do list item consists of a remove button (represented by \<span class="remove">X\</span>) and a description text.
+
+# JavaScript Section:
+
+*	The JavaScript code starts with the line // Write your code here.
+*	It selects the HTML elements using the document.querySelector() method and assigns them to variables for further manipulation.
+*	An event listener is added to the selectItem element (the \<ul\> element representing the to-do list). It listens for a click event on  the list items (\<li\> elements) and performs actions based on the clicked item.
+*	If a list item is clicked (identified by checking if the clicked element's tag name is 'LI'), it toggles the 'done' class on the item.   This class is used for styling completed items.
+*	If the remove button (\<span class="remove">X\</span>) within a list item is clicked, it removes the corresponding list item from the DOM.
+*	Another event listener is added to the selectForm element (the form element for adding new to-do items). It listens for a form         
+  submission event and performs actions based on the submitted data.
+*	It prevents the default form submission behavior to avoid page refresh.
+*	It retrieves the value entered in the input field (e.target.task.value) and assigns it to the input variable.
+*	It calls the validateInput function to check if the input is not empty.
+*	If the input is valid, it creates a new list item using the newItem function, inserts it at the beginning of the list 
+  (selectItem.insertAdjacentElement('afterbegin', ...)) and clears the input field.
+
+# Additional CSS Section:
+
+*	The code includes CSS styles for the various elements used in the HTML document.
+*	The styles define the appearance, layout, and behavior of the to-do list and its components.
+  Overall, the code creates a basic to-do list application with the ability to add new items, mark items as completed, and remove items 
+  from the list. The JavaScript code handles the interactivity and behavior of the application, while the CSS styles define the visual 
+  presentation.
+
